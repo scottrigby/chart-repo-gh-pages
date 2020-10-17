@@ -27,5 +27,3 @@ This is often the better choice, since you can then get download stats using the
 
 <!-- Keep full URL links to repo files because this README syncs from main to gh-pages.  -->
 [Apache 2.0 License](https://github.com/scottrigby/chart-repo-gh-pages/blob/main/LICENSE).
-
-test change
