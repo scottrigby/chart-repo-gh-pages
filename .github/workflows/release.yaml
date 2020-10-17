@@ -28,9 +28,12 @@ jobs:
               - added|modified: 'stable/**'
             incubator:
               - added|modified: 'incubator/**'
-      - name: Lint Markdown
+      - name: Test changes
         if: ${{ steps.filter.outputs.stable == 'true' }}
-        run: echo ${{ steps.filter.outputs.stable_files }}
+        run: |
+          echo "files: ${{ steps.filter.outputs.stable_files }}"
+          stable_dirs=$(echo ${{ steps.filter.outputs.stable_files }} | xargs -n1 | cut -d/ -f 1-2 | sort -u | xargs)
+          echo "::set-output name=stable_dirs::$stable_dirs"
 
       # Exports space-separated lists of changed chart dirs
       #   "xargs -n1" converts to newlines
@@ -44,6 +47,13 @@ jobs:
       #     incubator_dirs=$(echo ${{ steps.filter.outputs.incubator_files }} | xargs -n1 | cut -d/ -f 1-2 | sort -u | xargs)
       #     echo "::set-output name=incubator_dirs::$incubator_dirs"
       #     echo "dirs: $stable_dirs"
+
+  test:
+    needs: changes
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "dirs: ${{ needs.changes.outputs.stable_dirs }}"
 
   # package:
   #   needs: changes
