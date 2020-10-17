@@ -3,6 +3,16 @@ entries:
   c:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2020-10-17T23:26:49.3438186Z"
+    description: A Helm chart for Kubernetes
+    digest: 8c2d0e79ccb5e5077bc065c1d32c29b18a3ef2d623dc637286a8eafad1ecc14a
+    name: c
+    type: application
+    urls:
+    - https://scottrigby.github.io/chart-repo-gh-pages/incubator/packages/c-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2020-10-17T22:53:29.289737036Z"
     description: A Helm chart for Kubernetes
     digest: 2bd782a802c104e2272dfdc269d567cb83d6c52f5f23ac16e4f029c0d93a5888
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://scottrigby.github.io/chart-repo-gh-pages/incubator/packages/c-0.1.1.tgz
     version: 0.1.1
-generated: "2020-10-17T22:53:29.288632931Z"
+generated: "2020-10-17T23:26:49.3432947Z"
