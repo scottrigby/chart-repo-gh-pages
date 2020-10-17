@@ -19,10 +19,10 @@ jobs:
       incubator_dirs: ${{ steps.dirs.outputs.incubator_dirs }}
     steps:
       - uses: actions/checkout@v2
-      - uses: dorny/paths-filter@v2.2.0
+      - uses: dorny/paths-filter@v2.5.0
         id: filter
         with:
-          base: ${{ github.sha }}
+          base: '${{ github.sha }}'
           list-files: shell
           filters: |
             stable:
