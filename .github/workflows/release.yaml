@@ -13,8 +13,6 @@ jobs:
     outputs:
       stable: ${{ steps.filter.outputs.stable }}
       incubator: ${{ steps.filter.outputs.incubator }}
-      # stable_files: ${{ steps.filter.outputs.stable_files }}
-      # incubator_files: ${{ steps.filter.outputs.incubator_files }}
       stable_dirs: ${{ steps.dirs.outputs.stable_dirs }}
       incubator_dirs: ${{ steps.dirs.outputs.incubator_dirs }}
     steps:
