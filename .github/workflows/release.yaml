@@ -114,7 +114,7 @@ jobs:
               exit 1
           fi
           mkdir -p stable/packages
-          cp -f ${{ runner.temp }}/stable/*.tgz stable/packages
+          cp -f ${{ runner.temp }}/stable/packages/*.tgz stable/packages
           git add stable/packages/*.tgz
           git commit --signoff -m "Sync stable [ci skip]"
           git push
@@ -134,7 +134,7 @@ jobs:
               exit 1
           fi
           mkdir -p incubator/packages
-          cp -f ${{ runner.temp }}/incubator/*.tgz incubator/packages
+          cp -f ${{ runner.temp }}/incubator/packages/*.tgz incubator/packages
           git add incubator/packages/*.tgz
           git commit --signoff -m "Sync incubator [ci skip]"
           git push
