@@ -106,7 +106,7 @@ jobs:
       - name: sync stable
         if: ${{ needs.changes.outputs.stable == 'true' }}
         run: |
-          if helm repo index --url https://charts.helm.sh/stable --merge stable/index.yaml ${{ runner.temp }}/stable; then
+          if helm repo index --url https://scottrigby.github.io/chart-repo-gh-pages/stable --merge stable/index.yaml ${{ runner.temp }}/stable; then
               mv -f ${{ runner.temp }}/stable/index.yaml stable/index.yaml
               git add stable/index.yaml
           else
@@ -126,7 +126,7 @@ jobs:
       - name: sync incubator
         if: ${{ needs.changes.outputs.incubator == 'true' }}
         run: |
-          if helm repo index --url https://charts.helm.sh/incubator --merge incubator/index.yaml ${{ runner.temp }}/incubator; then
+          if helm repo index --url https://scottrigby.github.io/chart-repo-gh-pages/incubator --merge incubator/index.yaml ${{ runner.temp }}/incubator; then
               mv -f ${{ runner.temp }}/incubator/index.yaml incubator/index.yaml
               git add incubator/index.yaml
           else
