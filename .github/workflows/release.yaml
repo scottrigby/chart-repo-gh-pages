@@ -32,7 +32,6 @@ jobs:
       #   "sort -u" gets sorted unique dirs
       #   "xargs" converts back to space-separated string
       - id: dirs
-        if: ${{ steps.filter.outputs.stable == 'true' }}
         run: |
           echo "files: ${{ steps.filter.outputs.stable_files }}"
           stable_dirs=$(echo ${{ steps.filter.outputs.stable_files }} | xargs -n1 | cut -d/ -f 1-2 | sort -u | xargs)
@@ -52,11 +51,11 @@ jobs:
           echo "dirs: ${{ needs.changes.outputs.stable_dirs }}"
           mkdir -p ${{ runner.temp }}/stable/packages
           for dir in ${{ needs.changes.outputs.stable_dirs }}; do
-              if helm dependency build stable/"$dir"; then
-                  helm package --destination ${{ runner.temp }}/stable/packages stable/"$dir"
-                  echo "✅ built dependencies and packaged stable/$dir"
+              if helm dependency build "$dir"; then
+                  helm package --destination ${{ runner.temp }}/stable/packages "$dir"
+                  echo "✅ built dependencies and packaged $dir"
               else
-                  echo "❌ unable to build dependencies for stable/$dir"
+                  echo "❌ unable to build dependencies for $dir"
                   exit 1
               fi
           done
@@ -70,11 +69,11 @@ jobs:
         run: |
           mkdir -p ${{ runner.temp }}/incubator/packages
           for dir in ${{ needs.changes.outputs.incubator_dirs }}; do
-              if helm dependency build incubator/"$dir"; then
-                  helm package --destination ${{ runner.temp }}/incubator/packages incubator/"$dir"
-                  echo "✅ built dependencies and packaged incubator/$dir"
+              if helm dependency build "$dir"; then
+                  helm package --destination ${{ runner.temp }}/incubator/packages "$dir"
+                  echo "✅ built dependencies and packaged $dir"
               else
-                  echo "❌ unable to build dependencies for incubator/$dir"
+                  echo "❌ unable to build dependencies for $dir"
                   exit 1
               fi
           done
