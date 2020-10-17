@@ -1,3 +1,25 @@
 apiVersion: v1
-entries: {}
-generated: "2020-10-17T16:09:06.631238-04:00"
+entries:
+  a:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-10-17T22:43:09.590973391Z"
+    description: A Helm chart for Kubernetes
+    digest: 3355f67e6699a4fb5ab8c797e1f9170098fc16613e6ade15b16c1c5724482b9d
+    name: a
+    type: application
+    urls:
+    - https://charts.helm.sh/stable/packages/a-0.1.16.tgz
+    version: 0.1.16
+  b:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-10-17T22:43:09.591550689Z"
+    description: A Helm chart for Kubernetes
+    digest: 9958bf42846b9b1afc0496a74936ff495775734167f9f721ee4347e156a50e94
+    name: b
+    type: application
+    urls:
+    - https://charts.helm.sh/stable/packages/b-0.1.2.tgz
+    version: 0.1.2
+generated: "2020-10-17T22:43:09.590046194Z"
