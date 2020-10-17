@@ -22,7 +22,6 @@ jobs:
       - uses: dorny/paths-filter@v2.5.0
         id: filter
         with:
-          base: '${{ github.sha }}'
           list-files: shell
           filters: |
             stable:
