@@ -3,6 +3,16 @@ entries:
   a:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2020-10-17T22:53:26.296275795Z"
+    description: A Helm chart for Kubernetes
+    digest: e82ac07c77c28a85678946ef42df3edcac9d9d53d344f8912b06ba18e0913fc3
+    name: a
+    type: application
+    urls:
+    - https://scottrigby.github.io/chart-repo-gh-pages/stable/packages/a-0.1.18.tgz
+    version: 0.1.18
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2020-10-17T22:47:38.016893688Z"
     description: A Helm chart for Kubernetes
     digest: 463913bf3697f3460c26e7d1d549469088f16a1623bd7bd13b538006159d99a3
@@ -24,6 +34,16 @@ entries:
   b:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2020-10-17T22:53:26.30401033Z"
+    description: A Helm chart for Kubernetes
+    digest: 3db9031b1afc05fb18307a46d75234bddcaa356297b5515cd440b7e1c0e6113c
+    name: b
+    type: application
+    urls:
+    - https://scottrigby.github.io/chart-repo-gh-pages/stable/packages/b-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2020-10-17T22:43:09.591550689Z"
     description: A Helm chart for Kubernetes
     digest: 9958bf42846b9b1afc0496a74936ff495775734167f9f721ee4347e156a50e94
@@ -43,4 +63,4 @@ entries:
     urls:
     - https://scottrigby.github.io/chart-repo-gh-pages/stable/packages/c-0.1.0.tgz
     version: 0.1.0
-generated: "2020-10-17T22:47:38.016041785Z"
+generated: "2020-10-17T22:53:26.269655375Z"
