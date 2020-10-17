@@ -86,7 +86,9 @@ jobs:
           path: ${{ runner.temp }}/incubator/packages/
 
   index-release:
-    needs: package
+    needs:
+      - changes
+      - package
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
