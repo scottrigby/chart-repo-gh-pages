@@ -82,7 +82,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         if: ${{ needs.changes.outputs.incubator == 'true' }}
         with:
-          name: stable-packages
+          name: incubator-packages
           path: ${{ runner.temp }}/incubator/packages/
 
   index-release:
