@@ -27,6 +27,7 @@ jobs:
             incubator:
               - added|modified: 'incubator/**'
       - name: Test changes
+        id: dirs
         if: ${{ steps.filter.outputs.stable == 'true' }}
         run: |
           echo "files: ${{ steps.filter.outputs.stable_files }}"
