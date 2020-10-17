@@ -97,6 +97,7 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
       - uses: actions/download-artifact@v2
+        if: ${{ needs.changes.outputs.stable == 'true' }}
         with:
           name: stable-packages
           path: ${{ runner.temp }}/stable/packages
@@ -116,6 +117,7 @@ jobs:
           git commit --signoff -m "Sync stable [ci skip]"
           git push
       - uses: actions/download-artifact@v2
+        if: ${{ needs.changes.outputs.incubator == 'true' }}
         with:
           name: incubator-packages
           path: ${{ runner.temp }}/incubator/packages
