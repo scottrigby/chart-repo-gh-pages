@@ -5,8 +5,8 @@ on:
     # Only bother running workflow if files in one of these subfolder have
     # changed since most recent commit to main.
     paths:
-      - 'stable/**'
-      - 'incubator/**'
+      - 'stable/*/**'
+      - 'incubator/*/**'
 jobs:
   changes:
     runs-on: ubuntu-latest
@@ -23,9 +23,9 @@ jobs:
           list-files: shell
           filters: |
             stable:
-              - added|modified: 'stable/**'
+              - added|modified: 'stable/*/**'
             incubator:
-              - added|modified: 'incubator/**'
+              - added|modified: 'incubator/*/**'
       # Exports space-separated lists of changed chart dirs
       #   "xargs -n1" converts to newlines
       #   "cut -d/ -f 1-2" gets the first two dirs (example: stable/wordpress)
