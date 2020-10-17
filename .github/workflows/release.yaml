@@ -59,6 +59,11 @@ jobs:
                   exit 1
               fi
           done
+      - uses: actions/upload-artifact@v2
+        if: ${{ needs.changes.outputs.stable == 'true' }}
+        with:
+          name: stable-packages
+          path: ${{ runner.temp }}/stable/packages/
       - name: package incubator
         if: ${{ needs.changes.outputs.incubator == 'true' }}
         run: |
@@ -72,6 +77,11 @@ jobs:
                   exit 1
               fi
           done
+      - uses: actions/upload-artifact@v2
+        if: ${{ needs.changes.outputs.incubator == 'true' }}
+        with:
+          name: stable-packages
+          path: ${{ runner.temp }}/incubator/packages/
 
   index-release:
     needs: changes
@@ -84,6 +94,10 @@ jobs:
         run: |
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+      - uses: actions/download-artifact@v2
+        with:
+          name: stable-packages
+          path: ${{ runner.temp }}/stable/packages
       - name: sync stable
         if: ${{ needs.changes.outputs.stable == 'true' }}
         run: |
@@ -99,6 +113,10 @@ jobs:
           git add stable/packages/*.tgz
           git commit --signoff -m "Sync stable [ci skip]"
           git push
+      - uses: actions/download-artifact@v2
+        with:
+          name: incubator-packages
+          path: ${{ runner.temp }}/incubator/packages
       - name: sync incubator
         if: ${{ needs.changes.outputs.incubator == 'true' }}
         run: |
