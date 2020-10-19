@@ -17,11 +17,11 @@ You can then run `helm search repo chart-repo-gh-pages-stable` to see the charts
 
 ## Purpose
 
-The purpose of this project is to demonstrate hosting a Helm chart repo entirely on GitHub pages, using GitHub actions.
+This project demonstrates hosting a Helm chart repo entirely on GitHub pages, using GitHub actions.
 There are edge cases where this is preferable.
 
 To host a chart repo index on GitHub pages with packages in GitHub releases, instead use <https://github.com/helm/chart-releaser-action>.
-This is often the better choice, since you can then get download stats using the GitHub API.
+This is usually the better choice, since you can then get download stats using the GitHub API.
 
 ## License
 
